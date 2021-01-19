@@ -1,0 +1,4 @@
+# Project exclude paths
+/pmms2_api/target/
+/pmms2_consumer/target/
+/pmms2_provider/target/

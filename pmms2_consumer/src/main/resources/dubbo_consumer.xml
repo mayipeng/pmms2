@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://code.alibabatech.com/schema/dubbo
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--应用名-->
+    <dubbo:application name="pmms2_consumer"/>
+
+    <!--注册到zk-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+
+    <!--使用dubbo协议的20880端口-->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!--声明需要的服务接口 -->
+    <dubbo:reference id="userService" interface="com.diantong4.service.UserService" check="true"/>
+
+    <!--使用注解的方式暴露接口-->
+    <dubbo:annotation package="com.diantong4.pmm2_consumer"/>
+
+
+</beans>

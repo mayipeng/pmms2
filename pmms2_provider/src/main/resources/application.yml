@@ -1,0 +1,33 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://127.0.0.1:3306/pmms?useSSL=false&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: "root"
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+#Mybatis配置
+mybatis:
+  typeAliasesPackage: com.diantong4.entity
+  mapperLocations: classpath:mapper/*.xml
+  #打印Mybatis的sql语句
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
