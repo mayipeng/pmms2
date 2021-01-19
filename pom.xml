@@ -73,6 +73,7 @@
             <version>${zkClient.version}</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
