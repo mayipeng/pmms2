@@ -13,5 +13,6 @@ public class DubboProviderApplication {
     public static void main(String[] args) {
         System.out.println("生产者已经启动");
         SpringApplication.run(DubboProviderApplication.class, args);
+
     }
 }
